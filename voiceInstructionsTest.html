@@ -7,24 +7,28 @@
   </style>
 </head>
 <body>
-  <!-- Your HTML content here -->
+  <button id="speakButton">Start Spoken Instruction</button>
 
   <script>
-    // Wait for the page to load
     document.addEventListener('DOMContentLoaded', function(event) {
-      // Create a new speech synthesis object
-      const speechSynthesis = window.speechSynthesis;
+      // Get the speak button element
+      const speakButton = document.getElementById('speakButton');
 
-      // Create a new speech utterance
-      const utterance = new SpeechSynthesisUtterance();
+      // Add click event listener to the speak button
+      speakButton.addEventListener('click', function() {
+        // Create a new speech synthesis object
+        const speechSynthesis = window.speechSynthesis;
 
-      // Set the text to be spoken
-      utterance.text = 'Your spoken instruction goes here.';
+        // Create a new speech utterance
+        const utterance = new SpeechSynthesisUtterance();
 
-      // Trigger the speech synthesis
-      speechSynthesis.speak(utterance);
+        // Set the text to be spoken
+        utterance.text = 'Your spoken instruction goes here.';
+
+        // Trigger the speech synthesis
+        speechSynthesis.speak(utterance);
+      });
     });
   </script>
-Testing
 </body>
 </html>
