@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spoken Instruction Example</title>
+  <title>Mobile Page Example</title>
   <style>
-    /* Your CSS styles here */
+    body {
+      background-color: green;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    h1 {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    #startButton {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: green;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <button id="speakButton">Start Spoken Instruction</button>
+  <h1>Welcome!</h1>
+  
+  <button id="startButton">Start</button>
 
   <script>
     document.addEventListener('DOMContentLoaded', function(event) {
-      // Get the speak button element
-      const speakButton = document.getElementById('speakButton');
+      const startButton = document.getElementById('startButton');
 
-      // Add click event listener to the speak button
-      speakButton.addEventListener('click', function() {
-        // Create a new speech synthesis object
+      startButton.addEventListener('click', function() {
         const speechSynthesis = window.speechSynthesis;
-
-        // Create a new speech utterance
         const utterance = new SpeechSynthesisUtterance();
 
-        // Set the text to be spoken
-        utterance.text = 'Welcome to the subscription page.  Please press the Start button to initiate yhe subscription process.';
+        utterance.text = "Let's start the subscription process. In the next page, please enter your personal information.";
 
-        // Trigger the speech synthesis
         speechSynthesis.speak(utterance);
       });
     });
